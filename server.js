@@ -2,12 +2,12 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-// Serve static files from Angular build output
-app.use(express.static(path.join(__dirname, 'dist/JnvKmmAlumniUI')));
+// Serve static files from the correct build output
+app.use(express.static(path.join(__dirname, 'dist/JnvKmmAlumniUI/browser')));
 
 // Catch-all route using regex
 app.get(/^\/.*/, (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/JnvKmmAlumniUI/index.html'));
+  res.sendFile(path.join(__dirname, 'dist/JnvKmmAlumniUI/browser/index.html'));
 });
 
 // Start the server
