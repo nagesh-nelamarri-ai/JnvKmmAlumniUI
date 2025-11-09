@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '24.x'
+          node-version: '18.x'
 
       - name: Install dependencies
         run: npm install
@@ -26,9 +26,9 @@ jobs:
       - name: Build Angular app
         run: npm run build --if-present
 
-      - name: Prepare deployment package
+      - name: Package deployment bundle
         run: |
-          zip -r deploy.zip dist/ server.js package.json package-lock.json
+          zip -r deploy.zip dist/JnvKmmAlumniUI server.js package.json package-lock.json
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4

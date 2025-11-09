@@ -4,9 +4,7 @@
   "scripts": {
     "ng": "ng",
     "build": "ng build --configuration production",
-    "start": "node server.js",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "node server.js"
   },
   "prettier": {
     "printWidth": 100,

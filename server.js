@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-// Serve static files from the Angular build output
+// Serve static files from Angular build output
 app.use(express.static(path.join(__dirname, 'dist/JnvKmmAlumniUI')));
 
 // Catch-all route using regex
