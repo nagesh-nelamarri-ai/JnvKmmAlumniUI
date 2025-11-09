@@ -1,0 +1,31 @@
+<p-card class="contribution-card" header="Contribute & Support">
+  <div class="contribution-container">
+    
+    <!-- QR Code Section -->
+    <div class="qr-section">
+      <!-- <img [src]="qrCodeUrl" alt="QR Code" class="qr-image" /> -->
+       <p-image [src]="qrCodeUrl" alt="Image" class="qr-image" [preview]="true" />
+      <p class="scan-text">Scan to Contribute</p>
+    </div>
+
+    <!-- Account Details -->
+    <div class="details-section">
+      <p-panel header="Bank Account Details" [toggleable]="true" class="details-panel">
+        <div class="account-info">
+          <p><strong>Account Name:</strong> {{ accountDetails.name }}</p>
+          <p><strong>Account Number:</strong> {{ accountDetails.accountNumber }}</p>
+          <p><strong>IFSC Code:</strong> {{ accountDetails.ifsc }}</p>
+          <p><strong>Bank:</strong> {{ accountDetails.bank }}</p>
+        </div>
+      </p-panel>
+
+      <p-panel header="UPI Information" [toggleable]="true" class="details-panel">
+        <div class="upi-info">
+          <p><strong>UPI ID:</strong> {{ upiId }}</p>
+          <p-button label="Copy UPI ID" icon="pi pi-copy" (onClick)="copyUpiId()"></p-button>
+        </div>
+      </p-panel>
+    </div>
+  </div>
+</p-card>
+<p-toast></p-toast>

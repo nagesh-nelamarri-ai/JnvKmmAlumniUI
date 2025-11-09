@@ -1,0 +1,170 @@
+.membership-card {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 12px;
+  background: var(--surface-card);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 5rem;
+}
+
+.header-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-400));
+  color: rgb(10, 10, 237);
+  font-size: 1.2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.header-banner i {
+  font-size: 1.5rem;
+}
+
+.message-section {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.message-section p {
+  font-size: 1.05rem;
+  color: var(--text-color-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.message-section h2 {
+  color:seagreen;
+}
+
+.join-btn {
+  margin-top: 1rem;
+}
+
+.fees-section {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.fees-section h3 {
+  color: seagreen;
+  margin-bottom: 1rem;
+}
+
+.fees-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.fee-card {
+  text-align: center;
+  width: 200px;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.fee-card .fee-title {
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.fee-card .fee-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.registration {
+  border-top: 4px solid #42A5F5;
+}
+.yearly {
+  border-top: 4px solid #66BB6A;
+}
+.lifetime {
+  border-top: 4px solid #FFB300;
+}
+
+.payment-section {
+  margin-top: 2rem;
+}
+
+.payment-section h3 {
+  text-align: center;
+  color: seagreen;
+  margin-bottom: 1rem;
+}
+
+.payment-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.bank-details {
+  flex: 1;
+  min-width: 280px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.qr-section {
+  text-align: center;
+  cursor: pointer;
+}
+
+.qr-section .qr-image {
+  width: 180px;
+  height: 180px;
+  border: 3px solid lightblue;
+  border-radius: 10px;
+  background: #fff;
+  padding: 6px;
+  transition: transform 0.2s ease;
+}
+
+.qr-section .qr-image:hover {
+  transform: scale(1.05);
+}
+
+.qr-section .scan-text {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.footer .signature {
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.qr-large {
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin: auto;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}

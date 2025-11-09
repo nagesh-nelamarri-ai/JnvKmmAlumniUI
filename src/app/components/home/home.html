@@ -1,0 +1,21 @@
+<div class="header">
+         <p-image src="assets/logo/Logo.jpg" alt="logo" width="100"></p-image>
+    <h1 class="title">Jawahar Navodaya Vidyalaya Khammam, Alumni </h1>
+</div>
+<div class="card">
+    <p-menubar [model]="items">
+        <ng-template pTemplate="end">
+            <div class="p-d-flex">
+                <p-button label="Register" icon="pi pi-user" styleClass="p-button-text" (click)="OpenRegisterForm()"></p-button>
+            </div>
+        </ng-template>
+    </p-menubar>
+    <div class="content margin-10">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<div class="footer">
+    <footer>
+    <p>Developed by 14th batch (2000-2007)                      &copy; 2025 JNVP Alumni. All rights reserved.</p>
+</footer>
+</div>

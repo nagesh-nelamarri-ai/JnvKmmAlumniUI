@@ -1,0 +1,42 @@
+<p-card>
+    <div class="flex flex-column gap-3 p-fluid">
+        <div class="field">
+            <span class="p-float-label">
+                <input id="title" type="text" pInputText [(ngModel)]="newEvent.title" placeholder="Event Title" />
+            </span>
+        </div>
+        <div class="field">
+            <span class="p-float-label">
+                <input id="location" type="text" pInputText [(ngModel)]="newEvent.location"
+                    placeholder="Event Location" />
+            </span>
+        </div>
+        <div class="field">
+            <span class="p-float-label">
+                <p-datepicker inputId="calendar-12h" [(ngModel)]="newEvent.eventdatetime" [showTime]="true"
+                    [iconDisplay]="'input'" [showIcon]="true" hourFormat="12" placeholder="Event On" />
+            </span>
+        </div>
+        <div class="field">
+            <span class="p-float-label">
+                <p-fileUpload #fu name="file" (onUpload)="onUpload($event)" [auto]="false"
+                    [customUpload]="true" chooseLabel="Select File" showUploadButton="false" maxFileSize="500000" accept=".jpg,.jpeg,.pdf,.png"
+                    cancelLabel="Cancel">
+                </p-fileUpload>
+            </span>
+        </div>
+        <div class="field">
+            <span class="p-float-label">
+                <textarea id="description" placeholder="Description" pInputText [(ngModel)]="newEvent.description"
+                    rows="2" style="width: 100%; min-height: 60px;"></textarea>
+            </span>
+        </div>
+        <div class="flex justify-content-end gap-2">
+            <p-button label="Cancel" icon="pi pi-times" (click)="showForm = false" severity="secondary" [text]="true">
+            </p-button>
+            <p-button label="Save Event" icon="pi pi-check" (click)="uploadFile(fu)" [disabled]="!newEvent.title"
+                severity="success">
+            </p-button>
+        </div>
+    </div>
+</p-card>

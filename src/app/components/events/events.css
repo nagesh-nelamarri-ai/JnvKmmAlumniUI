@@ -1,0 +1,114 @@
+.events-container {
+  width: 100%;
+  padding: 1rem;
+}
+
+/* Responsive grid for cards */
+.events-grid {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 1rem;
+}
+
+/* Card styling */
+.event-card {
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Layout inside the card: image left, text right */
+.event-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.poster-section {
+  flex: 0 0 120px; /* fixed width for image */
+}
+
+.event-poster {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.description-section {
+  flex: 1;
+}
+
+.event-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: green;
+  margin: 0;
+}
+
+.event-subtitle {
+  font-size: 0.95rem;
+  color: orangered;
+}
+
+.subtitle {
+  margin-top: 0.25rem;
+  font-size: 1rem;
+  color: #a0522d; /* Brown/orange */
+  font-weight: 600;
+}
+
+.text-end {
+  text-align: right;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .event-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .poster-section {
+    flex: none;
+  }
+
+  .event-poster {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+  }
+
+  .description-section {
+    margin-top: 0.5rem;
+  }
+}
+
+/* Grid layout breakpoints */
+@media (min-width: 1024px) {
+  .events-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+}

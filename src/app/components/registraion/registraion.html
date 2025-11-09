@@ -1,0 +1,67 @@
+<div class="form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-container">
+        <div class="field">
+            <label for="name">Name</label>
+            <input id="name" type="text" pInputText formControlName="name" maxlength="100"/>
+        </div>
+
+        <div class="field">
+            <label for="surname">Surname</label>
+            <input id="surname" type="text" pInputText formControlName="surname" maxlength="100" />
+        </div>
+
+        <div class="field">
+            <label for="mobile">Mobile</label>
+            <input id="mobile" type="text" pInputText formControlName="mobile" maxlength="15" />
+        </div>
+
+        <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="text" pInputText formControlName="email" maxlength="100"/>
+        </div>
+
+        <div class="field-row">
+            <div class="field">
+                <label for="yearFrom">Year in JNV From</label>
+                <input id="yearFrom" type="text" pInputText formControlName="yearFrom" maxlength="5" />
+            </div>
+            <div class="field">
+                <label for="yearTo">To</label>
+                <input id="yearTo" type="text" pInputText formControlName="yearTo" maxlength="5" />
+            </div>
+        </div>
+
+        <div class="field">
+            <label for="batch">Batch</label>
+            <input id="batch" type="text" pInputText formControlName="batch" maxlength="3"/>
+        </div>
+
+        <div class="field">
+            <label for="profession">Profession</label>
+            <input id="profession" type="text" pInputText formControlName="profession" maxlength="50" />
+        </div>
+
+        <div class="field">
+            <label for="location">Current Location</label>
+            <input id="location" type="text" pInputText formControlName="location" maxlength="50" />
+        </div>
+
+        <div class="field">
+            <label for="profilePhoto">Profile Photo</label>
+            <p-fileupload #fu mode="advanced" name="profilePhoto" showUploadButton="false"
+                chooseLabel="Choose" chooseIcon="pi pi-upload" maxFileSize="300000" accept=".jpg,.jpeg,.pdf,.png"
+                (onSelect)="onFileSelect($event)" (onRemove)="onFileRemove($event)">
+            </p-fileupload>
+        </div>
+        <div class="field">
+            <label for="comments">Description</label>
+            <textarea id="comments" pTextarea formControlName="comments" maxlength="500"></textarea>
+        </div>
+
+        <div class="submit-row">
+            <button type="submit" pButton label="Register"></button>
+        </div>
+    </form>
+</div>
+
+<p-toast></p-toast>

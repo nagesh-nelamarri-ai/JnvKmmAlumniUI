@@ -1,0 +1,90 @@
+<p-card class="membership-card">
+  <!-- Header / Announcement -->
+  <div class="header-banner">
+    <span>📢 <b> Alumni Association &ndash; Membership Registration Open! </b> 📣</span>
+  </div>
+
+  <!-- Message -->
+  <div class="message-section">
+    <h2>Dear Alumni,</h2>
+    <p>
+      We are excited to announce the opening of the Alumni Membership Registration
+      for all former students! Become an official member of our
+      <strong>School Alumni Association</strong> and stay connected with your batchmates,
+      contribute to school initiatives, and be a proud part of our extended family.
+    </p>
+    <p>
+      Together, let&rsquo;s support our school, organize reunions, and build meaningful
+      networks and charitable initiatives.
+    </p>
+
+    <p-button 
+      label="Join Now" 
+      icon="pi pi-user-plus" 
+      class="p-button-rounded p-button-success join-btn"
+      >
+    </p-button>
+  </div>
+
+  <!-- Fees Section -->
+  <div class="fees-section">
+    <h3><i class="pi pi-credit-card"></i> Membership Fees</h3>
+
+    <div class="fees-grid">
+      <p-card class="fee-card registration">
+        <div class="fee-title">Registration Fee</div>
+        <div class="fee-amount">₹100</div>
+        <small>(One-time only)</small>
+      </p-card>
+
+      <p-card class="fee-card yearly">
+        <div class="fee-title">Yearly Membership</div>
+        <div class="fee-amount">₹1,000</div>
+        <small>per year</small>
+      </p-card>
+
+      <p-card class="fee-card lifetime">
+        <div class="fee-title">Lifetime Membership</div>
+        <div class="fee-amount">₹10,000</div>
+        <small>(one-time)</small>
+      </p-card>
+    </div>
+  </div>
+
+  <!-- Payment Section -->
+  <div class="payment-section">
+    <h3><i class="pi pi-wallet"></i> Payment Information</h3>
+    <div class="payment-content">
+      <div class="bank-details">
+        <p><strong>Account Name:</strong> {{ bankDetails.name }}</p>
+        <p><strong>Account No:</strong> {{ bankDetails.accountNumber }}</p>
+        <p><strong>IFSC:</strong> {{ bankDetails.ifsc }}</p>
+        <p><strong>Bank:</strong> {{ bankDetails.bank }}</p>
+      </div>
+
+      <div class="qr-section" (click)="showQrDialog()">
+        <img [src]="qrCodeUrl" alt="Payment QR Code" class="qr-image" />
+        <p class="scan-text">Click to enlarge</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p><strong>Your contribution, big or small, can make a meaningful difference!</strong></p>
+    <p>Let&rsquo;s come together to give back to the institution that shaped us.</p>
+    <p class="signature">
+      Warm regards,<br>
+      <strong>Papaiah V</strong><br>
+      President, Alumni Association
+    </p>
+  </div>
+</p-card>
+
+<!-- QR Dialog -->
+<p-dialog header="Payment QR Code" [(visible)]="showDialog" [modal]="true" [style]="{ width: '350px' }"
+  [dismissableMask]="true" [draggable]="false" [resizable]="false">
+  <img [src]="qrCodeUrl" alt="QR Code" class="qr-large" />
+</p-dialog>
+
+<p-toast></p-toast>

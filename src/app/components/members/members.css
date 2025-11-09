@@ -1,0 +1,118 @@
+.profile-photo {
+  /* width: 150px;
+  height: 150px; */
+  border-radius: 75%;
+}
+
+.member-section {
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.member-section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Horizontal scroll container */
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+}
+
+
+/* Hide scrollbar visually but keep functionality */
+.scroll-container::-webkit-scrollbar {
+  height: 6px;
+}
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+.scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Member info text */
+.member-info {
+  text-align: center;
+  padding: 0.5rem;
+}
+.member-info h4 {
+  font-size: 1.1rem;
+  margin: 0.25rem 0;
+}
+.member-info p {
+  color: #777;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Card design */
+.member-card {
+  flex: 0 0 300px; /* fixed width so it doesn't shrink */
+  min-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  margin-right: 1rem;
+  text-align: center;
+}
+.member-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image styling */
+.member-image {
+  width: 65%;
+  height: 160px;
+  object-fit:fill;
+  border-radius: 8px 8px 0 0;
+  
+    border-radius: 50%;
+}
+
+.association-header{
+  color: navy;
+}
+.alumni-header{
+  color: green;
+}
+.newmember-header{
+  color: dodgerblue;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .member-card {
+    flex: 0 0 300px;
+    min-width: 300px;
+  }
+  .member-image {
+    height: 220px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .member-card {
+    flex: 0 0 130px;
+    min-width: 220px;
+  }
+  .member-info h4 {
+    font-size: 1rem;
+  }
+  .member-info p {
+    font-size: 0.8rem;
+  }
+}

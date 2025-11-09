@@ -1,0 +1,38 @@
+<div class="member-section">
+  <h2 class="association-header">Association Members</h2>
+  <div class="scroll-container">
+    <p-card *ngFor="let member of associationMembers" class="member-card">
+      <img [src]="member.image" alt="{{member.name}}" class="member-image profile-photo">
+      <div class="member-info">
+        <h4>{{member.name}}</h4>
+        <p>Barch of {{member.year}} - {{member.toYear}}</p>
+      </div>
+    </p-card>
+  </div>
+</div>
+
+<div class="member-section">
+  <h2 class="alumni-header">Alumni Members</h2>
+  <div class="scroll-container">
+    <p-card *ngFor="let member of alumniMembers" class="member-card">
+      <img [src]="member.image" alt="{{member.name}}" class="member-image profile-photo">
+      <div class="member-info">
+        <h4>{{member.name}}</h4>
+        <p>Batch of {{member.year}} - {{member.toYear}}</p>
+      </div>
+    </p-card>
+  </div>
+</div>
+
+<div class="member-section">
+  <h2 class="newmember-header">Registered Members</h2>
+  <div class="scroll-container">
+    <p-card *ngFor="let member of registeredMembers" class="member-card">
+      <img [src]="member.image" alt="{{member.name}}" class="member-image profile-photo">
+      <div class="member-info">
+        <h4>{{member.name}}</h4>
+        <p>Batch of {{member.year}} - {{member.toYear}}</p>
+      </div>
+    </p-card>
+  </div>
+</div>
