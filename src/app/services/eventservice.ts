@@ -2,12 +2,16 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { EventData } from "../models/eventsdata";
+import { AppConfigService } from "./AppConfigService";
 
 @Injectable({ providedIn: 'root' })
 export class EventService {
-    private apiUrl = 'https://localhost:7143/api/Events'; // Replace with your actual API endpoint
-
-    constructor(private http: HttpClient) { }
+    private readonly apiUrl: string;
+    private readonly url: string;
+    constructor(private http: HttpClient, private config: AppConfigService) { 
+        this.apiUrl = this.config.apiUrl;
+        this.url = this.apiUrl + 'api/Events';
+    }
 
     createEvent(eventData: any): Observable<any> {
         const formData = new FormData();
@@ -31,23 +35,24 @@ export class EventService {
         //         }
         //     }
         // });
+        
 
-        return this.http.post<EventData>(this.apiUrl, eventData);
+        return this.http.post<EventData>(this.url, eventData);
     }
 
     getAllEvents(): Observable<EventData[]> {
-        return this.http.get<EventData[]>(this.apiUrl);
+        return this.http.get<EventData[]>(this.url);
     }
 
     getEventById(id: string): Observable<EventData> {
-        return this.http.get<EventData>(`${this.apiUrl}/${id}`);
+        return this.http.get<EventData>(`${this.url}/${id}`);
     }
 
     updateEvent(id: string, eventData: Partial<EventData>): Observable<EventData> {
-        return this.http.put<EventData>(`${this.apiUrl}/${id}`, eventData);
+        return this.http.put<EventData>(`${this.url}/${id}`, eventData);
     }
 
     deleteEvent(id: string): Observable<void> {
-        return this.http.delete<void>(`${this.apiUrl}/${id}`);
+        return this.http.delete<void>(`${this.url}/${id}`);
     }
 }

@@ -29,3 +29,65 @@
     padding: 0.75rem 0;
 }
 
+:host ::ng-deep {
+  /* Make DatePicker input full width */
+  .p-datepicker,
+  .p-datepicker-input,
+  .p-inputtext {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  /* Ensure the icon stays aligned and inside input */
+  .p-datepicker .p-input-icon-right {
+    width: 100%;
+  }
+
+}
+
+:host ::ng-deep {
+
+  /* Make sure the time picker section has enough space */
+  .p-datepicker-time {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  /* Fix input width inside the datepicker */
+  .p-datepicker-input {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+}
+
+::ng-deep .p-datepicker-panel {
+  min-width: 250px !important;    /* Minimum width so calendar + time fit */
+  max-width: 50vw !important;     /* Responsive max width on smaller screens */
+  width: auto !important;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;            /* Optional padding for spacing */
+  z-index: 1100 !important;        /* Ensure popup is above other UI */
+  margin: 7rem auto !important;  /* Center horizontally */
+}
+
+/* Optional: style the time selector nicely */
+::ng-deep .p-datepicker-time {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 1.2rem !important;
+  width: 100% !important;
+  padding-top: 0.5rem;
+}
+
+::ng-deep .p-datepicker-calendar-container + .p-datepicker-time-picker {
+    padding: 0 !important;
+}
+
+@media (max-width: 600px) {
+  :host ::ng-deep .p-datepicker-panel {
+    width: 95vw !important;
+    left: 2.5vw !important;
+  }
+}
