@@ -35,7 +35,7 @@ footer {
 
 ::ng-deep .p-menubar-item:not(.p-disabled) > .p-menubar-item-content:hover {
     color: white !important;
-    background: #59a8f7!important;
+    background: #59a8f7 !important;
 }
 
 ::ng-deep .p-menubar-item:not(.p-disabled) > .p-menubar-item-content:hover .p-menubar-item-icon {
@@ -43,10 +43,12 @@ footer {
 }
 
 ::ng-deep .p-menubar{
-  background: #f9f7f7 !important;
-  color: #037ef9 !important;
+  background: #f8fafc !important;
+  color: #1275d6 !important;
+  font-style: normal;
+  font-weight: 600 !important;
 }
 
 ::ng-deep .p-menubar-item-content{
-  color: #037ef9 !important;
+  color: #1275d6 !important;
 }

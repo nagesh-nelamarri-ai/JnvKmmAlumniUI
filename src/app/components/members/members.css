@@ -5,8 +5,11 @@
 }
 
 .member-section {
-  margin-bottom: 2rem;
   padding: 0 1rem;
+}
+
+.pad-bottom {
+  padding-bottom: 3rem;
 }
 
 .member-section h2 {
@@ -107,7 +110,7 @@
 @media (max-width: 480px) {
   .member-card {
     flex: 0 0 130px;
-    min-width: 220px;
+    min-width: 240px;
   }
   .member-info h4 {
     font-size: 1rem;

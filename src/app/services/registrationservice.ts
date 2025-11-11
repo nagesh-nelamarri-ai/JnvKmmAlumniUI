@@ -38,9 +38,6 @@ export class RegistraionService {
             // Post FormData to API
             return this.http.post<Member>(this.url, formData);
         }
-
-        // Otherwise send JSON
-        //let http = new HttpHeaders({ 'Content-Type': 'application/json','accept': 'text/plain' });            
         
         return this.http.post<Member>(this.url, payload as any);
     }

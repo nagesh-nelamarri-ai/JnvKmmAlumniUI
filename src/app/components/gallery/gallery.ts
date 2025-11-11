@@ -21,7 +21,7 @@ export class Gallery {
 
   displayImageModal = false;
 
-  imageUrl = 'assets/gallery/Alumini_Invitation.jpg' // Replace with dynamic source if needed
+  imageUrl = 'assets/gallery/Alumni_Invitation.jpg' // Replace with dynamic source if needed
 
   showImage() {
     this.displayImageModal = true;

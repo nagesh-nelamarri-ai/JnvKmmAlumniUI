@@ -1,5 +1,6 @@
 .container {
   padding: 0;
+  padding-top: 0.5rem;
 }
 
 .top-section {
@@ -36,8 +37,10 @@
   margin-top: 2rem;
   margin-bottom: 2rem;
   padding: 1rem;
-  background-color:#f6f6e4; /*#f4f4f4;*/
+  background-color:#f5f8f9; /*#f4f4f4;*/
   border-radius: 8px;
+  font-size: large;
+  font-family: sans-serif;
 }
 
 .profile-container {
@@ -51,4 +54,8 @@
   height: 480px; /* or whatever consistent height you prefer */
   object-fit: cover; /* keeps proportions and fills the area */
   display: block;
+}
+
+.member-info {
+  text-align: center;
 }

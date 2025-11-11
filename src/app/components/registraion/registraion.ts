@@ -45,9 +45,14 @@ export class Registraion implements OnInit {
     fileName: [''],
   });
 
-  
   }
+
   onSubmit() {
+    if (this.form.invalid) {
+      this.form.markAllAsTouched(); // highlight all invalid fields
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Please fill all required fields' });
+      return;
+    }
     console.log('Form Values:', this.form.value);
     if (this.form.valid) {
       const memberData: Member = {

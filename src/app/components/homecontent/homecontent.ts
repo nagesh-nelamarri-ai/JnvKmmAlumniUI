@@ -78,8 +78,8 @@ export class Homecontent implements OnInit {
     },
     {
       name: 'Jane Smith',
-      photo: 'https://primefaces.org/cdn/primeng/images/galleria/galleria13.jpg',
-      description: 'UX Designer passionate about user-centered design.'
+      photo: 'assets/gallery/Alumni_Invitation.jpg',
+      description: 'Alumni Secretary'
     }
   ];
 

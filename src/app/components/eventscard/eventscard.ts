@@ -30,13 +30,12 @@ import { DynamicDialogRef } from 'primeng/dynamicdialog';
 })
 
 export class Eventscard {
-  uploadUrl = 'https://localhost:5001/api/upload';
   events: EventData[] = [];
   newEvent: EventData = {
     title: '',
     file: null,
     description: '',
-    eventdatetime: undefined,
+    eventDateTime: null,
     location: ''
   };
 
@@ -57,7 +56,7 @@ export class Eventscard {
     formData.append('File', file);
     formData.append('Title', this.newEvent.title);
     formData.append('Description', this.newEvent.description || '');
-    formData.append('EventDateTime', this.newEvent.eventdatetime ? new Date(this.newEvent.eventdatetime).toISOString() : '');
+    formData.append('EventDateTime', this.newEvent.eventDateTime ? new Date(this.newEvent.eventDateTime).toISOString() : '');
     formData.append('Location', this.newEvent.location || '');
 
     console.log('Uploading file with data:', formData);

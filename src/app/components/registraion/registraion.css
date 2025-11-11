@@ -16,6 +16,10 @@
   gap: 1rem;
 }
 
+.year-field {
+  min-width: 200px;
+  max-width: 100px;
+}
 
 .fade-in {
   animation: fade-in 0.5s ease-in-out;
@@ -74,7 +78,7 @@
   font-weight: bold;
 }
 
-/* @media (max-width: 600px) {
+@media (max-width: 600px) {
   .form-container {
     padding: 1rem;
     .field-row {
@@ -85,7 +89,7 @@
       font-size: 0.95rem;
     }
   }
-} */
+}
 
 /* Make it look full screen on mobile */
 @media (max-width: 768px) {

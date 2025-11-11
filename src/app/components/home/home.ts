@@ -46,12 +46,12 @@ export class Home implements OnInit {
       },
       {
         label: 'MemberShip',
-        icon: 'pi pi-calendar',
+        icon: 'pi pi-users',
         routerLink: ['membership'],
       },
       {
         label: 'Contribute',
-        icon: 'pi pi-image',
+        icon: 'pi pi-wallet',
         routerLink: ['contribute']
       },
       {

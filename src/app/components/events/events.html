@@ -7,7 +7,7 @@
 
   <!-- Event Cards Grid -->
   <div class="events-grid">
-    <p-card *ngFor="let event of events1"
+    <p-card *ngFor="let event of events"
       class="event-card shadow-3 border-round-lg overflow-hidden">
 
       <div class="p-3">
@@ -21,16 +21,16 @@
 
         <p class="subtitle">
           <i class="pi pi-calendar" style="color:#a0522d; margin-right: 6px;"></i>
-          {{ event.eventdatetime }}
+          {{ event.eventDateTime | date:'dd-MM-yyyy hh:mm a' }}
         </p>
 
         <!-- Main Content: Poster on left, Description on right -->
         <div class="event-content">
           <!-- Poster -->
           <div class="poster-section">
-            <img [src]="event.filePath" alt="Event Poster"
+            <img [src]="getFullPath(event.filePath!)" alt="Event Poster"
               class="event-poster border-round-lg shadow-2"
-              (click)="showImage()" title="Click to enlarge" />
+              (click)="showImage(event)" title="Click to enlarge" />
           </div>
 
           <!-- Description -->
@@ -56,6 +56,5 @@
 <p-dialog [(visible)]="displayImageModal" [modal]="true"
   [style]="{ width: 'auto', minWidth: '300px' }"
   [closeOnEscape]="true" [dismissableMask]="true" [draggable]="false">
-  <img [src]="imageUrl" alt="Event Image"
-    style="width: 100%; height: auto; border-radius: 8px;" />
+  <img [src]="imageUrl" alt="Event Image" />
 </p-dialog>

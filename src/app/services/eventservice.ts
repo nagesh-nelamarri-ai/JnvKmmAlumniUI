@@ -20,23 +20,6 @@ export class EventService {
             console.log(pair[0] + ':', pair[1]);
         }
 
-        // Append all fields to FormData
-        // Object.keys(eventData).forEach(key => {
-        //     const value = eventData[key];
-        //     if (value !== null && value !== undefined) {
-        //         if (key === 'file' && value instanceof File) {
-        //             formData.append('File', value, value.name);
-        //         } else if (key === 'eventdatetime' && value instanceof Date) {
-        //             formData.append('EventDateTime', value.toISOString());
-        //         } else {
-        //             // Capitalize first letter of key for .NET API convention
-        //             const capitalizedKey = key.charAt(0).toUpperCase() + key.slice(1);
-        //             formData.append(capitalizedKey, String(value));
-        //         }
-        //     }
-        // });
-        
-
         return this.http.post<EventData>(this.url, eventData);
     }
 

@@ -17,6 +17,7 @@
   width: 100%;
   max-width: 400px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 3rem;
 }
 
 .event-card:hover {
@@ -112,3 +113,16 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  ::ng-deep .p-dialog {
+    width: 95% !important;
+    max-width: 600px;
+  }
+
+  ::ng-deep .p-datepicker-panel {
+    min-width: 295px !important;
+  } 
+}
+

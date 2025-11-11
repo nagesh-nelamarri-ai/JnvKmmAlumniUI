@@ -5,7 +5,7 @@ export interface Member {
     email: string;
     yearFrom: number;
     yearTo: number;
-    batch: string;
+    batch: number;
     profession: string;
     profilePhoto?:string | null;
     profileImg?: File | null;

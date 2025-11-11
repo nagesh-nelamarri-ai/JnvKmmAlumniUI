@@ -6,7 +6,7 @@
     <p-menubar [model]="items">
         <ng-template pTemplate="end">
             <div class="p-d-flex">
-                <p-button label="Register" icon="pi pi-user" styleClass="p-button-text" (click)="OpenRegisterForm()"></p-button>
+                <p-button label="Register" icon="pi pi-user" [rounded]="true" [raised]="true" (click)="OpenRegisterForm()"></p-button>
             </div>
         </ng-template>
     </p-menubar>
