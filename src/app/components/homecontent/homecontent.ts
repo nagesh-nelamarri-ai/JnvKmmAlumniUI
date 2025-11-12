@@ -73,7 +73,7 @@ export class Homecontent implements OnInit {
     this.members = [
     {
       name: 'Papaiah Varla',
-      photo: 'assets/gallery/Papaiah_1.jpg',
+      photo: 'assets/gallery/Papaiah.jpg',
       description: 'President, Alumni Association'
     },
     {

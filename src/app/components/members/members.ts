@@ -56,7 +56,7 @@ export class Members implements OnInit {
 
   loadMembersData() {
     this.associationMembers = [
-      { name: 'Papaiah Varla', designation: 'President', image: 'assets/gallery/Papaiah_1.jpg', year: '1988', toYear: '1995' },
+      { name: 'Papaiah Varla', designation: 'President', image: 'assets/gallery/Papaiah.jpg', year: '1988', toYear: '1995' },
     ];
 
   }
