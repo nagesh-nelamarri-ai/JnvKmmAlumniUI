@@ -5,10 +5,13 @@ import { ButtonModule } from 'primeng/button';
 import { RegistraionService } from '../../services/registrationservice';
 import { AppConfigService } from '../../services/AppConfigService';
 import { Member } from '../../models/member';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-members',
-  imports: [CommonModule, CardModule],
+  imports: [CommonModule, CardModule, ProgressSpinnerModule, AutoCompleteModule, FormsModule ],
   templateUrl: './members.html',
   styleUrl: './members.css',
   standalone: true
@@ -20,7 +23,10 @@ export class Members implements OnInit {
   registeredMembers: MembersData[] = [];
   allMembers: Member[] = [];
   private readonly apiUrl: string;
-
+  isLoading: boolean = false;
+  yearList: string[] = ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007'];
+  year: string = '';
+  filteredYears: string[] = [];
 
   constructor(private registrationService: RegistraionService, private config: AppConfigService) {
     this.apiUrl = this.config.apiUrl;
@@ -32,8 +38,12 @@ export class Members implements OnInit {
   }
 
   loadRegisteredMembers() {
+    this.isLoading = true;
+      this.isLoading = false;
+
     this.registrationService.getAll().subscribe(data => {
       console.log('get all members ', data.length);
+      this.isLoading = false;
       if (data) {
         this.allMembers = data;
         this.registeredMembers = data.filter(x => x.roleId != 2).map(member => ({
@@ -61,5 +71,14 @@ export class Members implements OnInit {
     ];
 
   }
+
+  search(event: any) {
+    const query = event.query.toLowerCase();
+  this.filteredYears = this.yearList.filter(year =>
+    year.toLowerCase().includes(query)
+  );
+   console.log('search year', event.query);
+  }
+
 
 }

@@ -28,6 +28,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 })
 export class Registraion implements OnInit {
    public form: FormGroup = new FormGroup({}) ;
+   isLoading: boolean = false;
   constructor(public fb: FormBuilder,private registrationService: RegistraionService,private messageService: MessageService,public ref?: DynamicDialogRef) {}
 
   ngOnInit() {
@@ -50,8 +51,9 @@ export class Registraion implements OnInit {
   }
 
   onSubmit() {
+    this.isLoading = true;
     if (this.form.invalid) {
-      //this.form.markAllAsTouched(); // highlight all invalid fields
+      this.isLoading = false;
       this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Please fill all fields' });
       return;
     }
@@ -68,12 +70,16 @@ export class Registraion implements OnInit {
       console.log('Member Data:', memberData);
       this.registrationService.register(memberData).subscribe({
         next: () => {
+          this.isLoading = false;
           this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Registered successfully' });
           setTimeout(() => {
             this.ref?.close();
           }, 200);
         },
-        error: err => console.error('Error:', err)
+        error: err => {
+          this.isLoading = false;
+          this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Registration failed. Please try again.'});
+        } 
       });
     } else {
       // this.form.markAllAsTouched();

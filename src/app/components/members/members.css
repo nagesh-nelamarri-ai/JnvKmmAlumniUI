@@ -95,6 +95,26 @@
   color: dodgerblue;
 }
 
+/* dropdown start */
+
+.alumni-header-row {
+  display: flex;
+  justify-content: space-between; /* Heading left, dropdown right */
+  align-items: center;            /* Vertically center both */
+  gap: 1rem;                      /* Optional spacing between items */
+}
+
+.newmember-header {
+  margin: 0;                      /* Remove default h5 margin */
+  font-size: 1.2rem;              /* Adjust font size if needed */
+}
+
+.year-dropdown {
+  width: 200px;                   /* Adjust width of the dropdown */
+}
+
+/* dropdown end */
+
 /* Responsive tweaks */
 @media (max-width: 768px) {
   .member-card {
