@@ -3,7 +3,7 @@
     <div class="slider">
       <!-- <theme-switcher></theme-switcher> -->
       <p-galleria [value]="images" [showIndicators]="true" [showThumbnails]="false" [changeItemOnIndicatorHover]="true"
-        [containerStyle]="{'margin': '1rem'}" [autoPlay]="true" [circular]="true" [numVisible]="5">
+        [containerStyle]="{'margin': '0.3rem'}" [autoPlay]="true" [circular]="true" [numVisible]="5">
         <ng-template #item let-item>
           <img [src]="item.itemImageSrc" class="galleria-image" />
         </ng-template>
@@ -22,6 +22,13 @@
       </div>
     </p-card>
   </div>
+  
+  <div class="card flex justify-center text-center gap-4">
+    <a href="https://www.appsheet.com/start/ca50f90b-a9ab-43cc-beb4-96a215649404#view=Members" pButton target="_blank" class="no-underline" rel="noopener noreferrer">
+        <span pButtonLabel>JNV Directory</span>
+    </a>
+  </div>
+
   <div class="about-us">
     <div class="page-content">
       <h2 style="color: green;">About Us</h2>

@@ -4,10 +4,11 @@ import { Photoservice } from '../../services/photoservice';
 import { CommonModule } from '@angular/common';
 import { GalleriaModule } from 'primeng/galleria';
 import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-homecontent',
-  imports: [CommonModule, GalleriaModule, CardModule],
+  imports: [CommonModule, GalleriaModule, CardModule,ButtonModule],
   providers: [Photoservice],
   templateUrl: './homecontent.html',
   styleUrl: './homecontent.css',
