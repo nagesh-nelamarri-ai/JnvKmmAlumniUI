@@ -62,11 +62,25 @@ export class Events implements OnInit {
         filePath: 'assets/gallery/Event_HealthCamp.jpg',
         alt: 'JNVP',
       },
+       {
+        title: 'Sports',
+        eventDateTime: new Date('2025-12-06T10:00:00'),
+        location: 'School Grounds',
+        filePath: 'assets/gallery/Event_Sports.jpg',
+        alt: 'JNVP',
+      },
       {
         title: 'Career Guidance',
         eventDateTime: new Date('2025-12-06T18:00:00'),
         location: 'MP Hall',
         filePath: 'assets/gallery/Event_Career.jpg',
+        alt: 'JNVP',
+      },
+      {
+        title: 'Cultural Programme',
+        eventDateTime: new Date('2025-12-06T18:00:00'),
+        location: 'Grand Dais',
+        filePath: 'assets/gallery/Event_Cultural.jpg',
         alt: 'JNVP',
       },
       {
@@ -83,7 +97,6 @@ export class Events implements OnInit {
         filePath: 'assets/gallery/Event_CampusRun.jpg',
         alt: 'JNVP',
       },
-      
       
     ]
 
