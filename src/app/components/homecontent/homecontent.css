@@ -56,6 +56,10 @@
   margin-top: 0;
 }
 
+.margin-top-2 {
+  margin-top: 2rem;
+}
+
 .text-center{
   text-align: center;
 }

@@ -2,6 +2,7 @@
   padding: 20px;
   max-width: 1200px;
   margin: auto;
+  margin-bottom:4rem;
 }
 
 .tabs {
@@ -26,7 +27,7 @@
 }
 
 .photo-grid {
-  column-count: 3;
+  column-count: 4;
   column-gap: 10px;
 }
 

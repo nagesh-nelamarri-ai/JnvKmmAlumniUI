@@ -12,13 +12,34 @@
   </div>
 
   <!-- Photos Grid -->
-  <div *ngIf="activeTab === 'photos'" class="photo-grid">
-    <div class="photo-card" *ngFor="let p of photos">
-       <a [href]="getDriveViewUrl(p.id)" target="_blank" rel="noopener">
-      <img [src]="getPublicFileUrl(p.id)" [alt]="p.name" loading="lazy">
-    </a>
-    </div>
+   <p-fieldset legend="06-12-2025" [toggleable]="true" *ngIf="activeTab === 'photos'">
+  <div *ngFor="let section of sections; let i = index">
+    <p-fieldset [legend]="section.name" [toggleable]="true" (onBeforeToggle)="onSectionClick(section)">
+      <div class="photo-grid">
+        <div class="photo-card" *ngFor="let p of section.data">
+          <a [href]="getDriveViewUrl(p.id)" target="_blank" rel="noopener">
+            <img [src]="getPublicFileUrl(p.id)" [alt]="p.name" loading="lazy">
+          </a>
+        </div>
+      </div>
+    </p-fieldset>
   </div>
+  </p-fieldset>
+
+  <p-fieldset legend="07-12-2025" [toggleable]="true" *ngIf="activeTab === 'photos'">
+  <div *ngFor="let section of sections2; let i = index">
+    <p-fieldset [legend]="section.name" [toggleable]="true" (onBeforeToggle)="onSectionClick2(section)">
+      <div class="photo-grid">
+        <div class="photo-card" *ngFor="let p of section.data">
+          <a [href]="getDriveViewUrl(p.id)" target="_blank" rel="noopener">
+            <img [src]="getPublicFileUrl(p.id)" [alt]="p.name" loading="lazy">
+          </a>
+        </div>
+      </div>
+    </p-fieldset>
+  </div>
+  </p-fieldset>
+
 
   <!-- Videos Grid -->
   <div *ngIf="activeTab === 'videos'" class="video-grid">

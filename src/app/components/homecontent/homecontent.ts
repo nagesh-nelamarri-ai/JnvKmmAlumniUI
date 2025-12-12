@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { GalleriaModule } from 'primeng/galleria';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homecontent',
@@ -28,7 +29,7 @@ export class Homecontent implements OnInit {
       numVisible: 1
     }
   ];
-  constructor(private photoService: Photoservice) { }
+  constructor(private photoService: Photoservice,private router: Router) { }
 
   ngOnInit() {
     // this.images = [];
@@ -88,4 +89,8 @@ export class Homecontent implements OnInit {
   ];
 
   }
+
+  goGallery() {
+  this.router.navigate(['/gallery']);
+}
 }
