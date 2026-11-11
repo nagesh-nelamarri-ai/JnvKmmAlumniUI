@@ -4,7 +4,6 @@ import { MenuItem } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { ImageModule } from 'primeng/image';
 import { MenubarModule } from 'primeng/menubar';
-import { Registraion } from '../registraion/registraion';
 import { DialogModule } from 'primeng/dialog';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 
@@ -60,20 +59,6 @@ export class Home implements OnInit {
         routerLink: ['contactus']
       },
     ]
-  }
-  OpenRegisterForm() {
-    this.ref = this.dialogService.open(Registraion, {
-      header: 'Registration',
-      width: '40%',
-      baseZIndex: 10000,
-      modal: true,
-      closable: true,
-      // blockScroll: true,
-      dismissableMask: true,
-      style: { 'width': '90vw', 'max-width': '500px' },
-      contentStyle: { 'max-height': '85vh', 'overflow': 'auto' },
-      breakpoints: { '768px': '100vw', '425px': '100vw' }
-    });
   }
   
 }

@@ -1,7 +1,8 @@
+<!-- Implement a Hosting Members section and Alumni Association Members section. fetch data from a Json file-->
+
 <div class="member-section">
-  <h2 class="alumni-header">Hosting Batch Members <p-badge [value]="alumniMembers.length" severity="success" badgeSize="large"></p-badge><p-badge [value]="allMembers.length" severity="success" badgeSize="large" style="margin-left: 10px;"></p-badge></h2>
-    <p-progress-spinner ariaLabel="loading" *ngIf="isLoading" />
-  <div class="scroll-container" *ngIf="!isLoading">
+  <h2 class="alumni-header">Alumni Association Members <p-badge [value]="alumniMembers.length" severity="success" badgeSize="large"></p-badge></h2>
+  <div class="scroll-container">
     <p-card *ngFor="let member of alumniMembers" class="member-card" >
       <img [src]="member.image" alt="{{member.name}}" class="member-image profile-photo">
       <div class="member-info">
@@ -12,14 +13,10 @@
   </div>
 </div>
 
-<!-- <div class="member-section pad-bottom">
-  <div class="card flex justify-center alumni-header-row">
-    <h2 class="newmember-header">Alumni Members <p-badge [value]="registeredMembers.length" severity="success" badgeSize="large"></p-badge></h2>
-    <p-autocomplete [(ngModel)]="year" [suggestions]="filteredYears" size="small" style="width: 70px;" placeholder="Batch Year..." [dropdown]="true" (ngModelChange)="filterMembers()" (completeMethod)="search($event)" />
-</div>
-    <p-progress-spinner ariaLabel="loading" *ngIf="isLoading"/>
-  <div class="scroll-container"  *ngIf="!isLoading">
-    <p-card *ngFor="let member of registeredMembers" class="member-card">
+<div class="member-section">
+  <h2 class="alumni-header">Hosting Batch Members <p-badge [value]="allMembers.length" severity="success" badgeSize="large" style="margin-left: 10px;"></p-badge></h2>
+  <div class="scroll-container">
+    <p-card *ngFor="let member of alumniMembers" class="member-card" >
       <img [src]="member.image" alt="{{member.name}}" class="member-image profile-photo">
       <div class="member-info">
         <h4>{{member.name}}</h4>
@@ -27,4 +24,5 @@
       </div>
     </p-card>
   </div>
-</div> -->
+</div>
+

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageItem } from '../../models/imageitem';
-import { Photoservice } from '../../services/photoservice';
 import { CommonModule } from '@angular/common';
 import { GalleriaModule } from 'primeng/galleria';
 import { CardModule } from 'primeng/card';
@@ -10,7 +9,6 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-homecontent',
   imports: [CommonModule, GalleriaModule, CardModule,ButtonModule],
-  providers: [Photoservice],
   templateUrl: './homecontent.html',
   styleUrl: './homecontent.css',
   standalone: true
@@ -29,15 +27,9 @@ export class Homecontent implements OnInit {
       numVisible: 1
     }
   ];
-  constructor(private photoService: Photoservice,private router: Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    // this.images = [];
-
-    // this.photoService.getImages().then((images) => {
-    //   this.images = images;
-    //   console.log('images', this.images)
-    // });
 
     this.images = [
       {
@@ -59,8 +51,8 @@ export class Homecontent implements OnInit {
                 title: 'Gallery Image 3'
             },
             {
-                itemImageSrc: 'assets/gallery/Photo_4.jpg',
-                thumbnailImageSrc: 'assets/gallery/Photo_4.jpg',
+                itemImageSrc: 'assets/gallery/alumni_group_14.JPG',
+                thumbnailImageSrc: 'assets/gallery/alumni_group_14.JPG',
                 alt: 'Image 4',
                 title: 'Gallery Image 4'
             },
